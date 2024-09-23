@@ -1,0 +1,164 @@
+load_name t  ; 加载一个名字 t 到栈中
+load_value t  ; 加载一个变量 t 的值到栈中
+load_const t  ; 加载一个字面量值到栈中
+assign
+; 首先从栈中弹出两个操作数  弹出的第一个操作数是要赋的值 第二个操作数是赋值目标
+; 赋值时 如果变量不存在 则创建变量 如果变量存在 则更改变量值
+
+add
+sub
+mul
+div
+
+compare_above
+compare_above_equal
+compare_below
+compare_below_equal
+compare_equal
+compare_not_equal
+
+jmp t
+jmp_remove t
+jmp_true_remove t
+; true 表示栈顶的值为 true 时即跳转
+; remove 表示条件成立的话则删除栈顶部的前 3 个元素(分别是比较结果 比较数1 比较数2)
+; t 表示往下跳 t 个命令去执行  -t 表示往上跳两个命令执行
+jmp_false_remove t
+
+call name
+; name 是函数的名字
+ret
+create_scope
+delete_scope
+
+nop
+
+seek t
+; 弹出栈顶的 t 个元素
+; 命令用于清理栈中剩余数据
+
+
+
+
+
+
+; num a = 5;
+load_name a
+load_value 5
+assign
+
+
+
+; num a = 1 + 2 * 3;
+load_name a
+load_const 2
+load_const 3
+mul
+load_const 1
+add
+assign
+
+
+
+; num a = b + c - 2;
+load_name a
+load_name b
+load_value
+load_name c
+load_value
+add
+load_const 2
+sub
+assign
+
+
+
+; if (i > 10) {
+; } else {
+; }
+; 解析时 按照 false 块 true 块 最后本块的顺序解析
+; 如果没有 false 块 则只按照 true 块 而后本块的顺序解析
+load_value i
+load_const 10
+compare_above
+jmp_true_remove 2  ; 因为这里需要跳转到 true 的代码处执行 而这里距离 true 的代码只隔了 1 条指令 故固定取值 2
+jmp_false_remove 3 ; 这个值是需要得到 if true 的 body 的长度后再计算得出的  如果存在 else 块 则取值 if true 的 body 的长度 +2  如果不存在 else 块 则取值 if true 的 body 的长度 +1
+; 从这里开始是条件成立时的代码
+nop
+jmp 2;  要取值为 else 部分代码块的长度 +1 以跳过 else 部分代码 
+; 从这里开始是条件不成立时的代码
+nop
+
+
+
+; while(i < 10) {
+;     continue;
+;     break;
+; }
+load_value i
+load_const 10
+compare_below
+jmp_true_remove 3
+; 条件成立的话就跳转到循环体的代码中 循环控制跳转语句只有两条 故这里值固定为 3
+jmp_remove ?
+; 当循环条件不成立时就会走到这里  在解析完循环体后让此值等于 循环体长度 +3  这里解析完后得到 ?=5
+jmp ?
+; 处理 break 的节点  让循环体中的所有 break 均跳转到这里 而后再由这里跳转到循环体结束位置
+; 不把这个指令和上面的 jmp_remove 合并的原因是  执行 jmp_remove 时 栈中仍保存着比较的结果 需要使用 jmp_remove 平衡栈
+; 但执行到 break 时栈本就是平衡的  使用 jmp_remove 反而会出问题
+; 取值 循环体长度 +2
+#continue#  ; 在循环体解析完成后再在 while 的解析代码中解析它  解析后它是 jmp -6
+#break#  ; 在循环体解析完成后再在 while 的解析代码中解析它  解析后它是 jmp -3
+jmp -8  ; 循环 具体 jmp 需要需要将循环体解析完成后再得出
+
+
+
+; num fn f(num t, numj) {
+;     num i = t + j;
+;     return i;
+; }
+jmp ?
+; 我们将函数代码和普通作用域代码都混在一起存储
+; 开头先写一个 jmp  防止顺序执行代码时一不小心就执行到函数内的代码了
+; 后续 call 的时候函数的地址应该是下一条指令的地址
+; ? 取值函数体的长度 +1
+load_name i
+load_value t
+load_value j
+add
+assign
+load_value i  ; return 的值就存储在栈顶
+ret
+
+
+// num res = f(a, b);
+load_name res
+create_scope
+load_name t
+load_value a
+assign
+load_name j
+load_value b
+assign
+call f  ; f 需要替换为函数在代码中的位置  替换操作需要在整个代码整理完成后再替换
+delete_scope
+assign
+
+
+// f(a, b);
+create_scope
+load_name t
+load_value a
+assign
+load_name j
+load_value b
+assign
+call f  ; f 需要替换为函数在代码中的位置
+delete_scope
+seek 1
+
+
+
+
+
+

@@ -1,0 +1,369 @@
+{
+    "type": "program",
+    "op": "none",
+    "body": [
+        {
+            "type": "action",
+            "op": "assign",
+            "body": [
+                {
+                    "type": "target",
+                    "op": "none",
+                    "body": [
+                        1
+                    ]
+                },
+                {
+                    "type": "number_iter",
+                    "op": "none",
+                    "body": [
+                        "5"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "action",
+            "op": "assign",
+            "body": [
+                {
+                    "type": "target",
+                    "op": "none",
+                    "body": [
+                        2
+                    ]
+                },
+                {
+                    "type": "string_iter",
+                    "op": "none",
+                    "body": [
+                        "\"hello\""
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "function",
+            "op": "none",
+            "body": [
+                {
+                    "type": "target",
+                    "op": "none",
+                    "body": [
+                        3
+                    ]
+                },
+                {
+                    "type": "type",
+                    "op": "none",
+                    "body": [
+                        "num"
+                    ]
+                },
+                {
+                    "type": "target",
+                    "op": "none",
+                    "body": [
+                        4
+                    ]
+                },
+                {
+                    "type": "target",
+                    "op": "none",
+                    "body": [
+                        5
+                    ]
+                },
+                {
+                    "type": "program",
+                    "op": "none",
+                    "body": [
+                        {
+                            "type": "action",
+                            "op": "assign",
+                            "body": [
+                                {
+                                    "type": "target",
+                                    "op": "none",
+                                    "body": [
+                                        6
+                                    ]
+                                },
+                                {
+                                    "type": "number_iter",
+                                    "op": "none",
+                                    "body": [
+                                        "0"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "action",
+                            "op": "while",
+                            "body": [
+                                {
+                                    "type": "action",
+                                    "op": "lt",
+                                    "body": [
+                                        {
+                                            "type": "target",
+                                            "op": "none",
+                                            "body": [
+                                                6
+                                            ]
+                                        },
+                                        {
+                                            "type": "target",
+                                            "op": "none",
+                                            "body": [
+                                                4
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "program",
+                                    "op": "none",
+                                    "body": [
+                                        {
+                                            "type": "action",
+                                            "op": "if",
+                                            "body": [
+                                                {
+                                                    "type": "action",
+                                                    "op": "equal",
+                                                    "body": [
+                                                        {
+                                                            "type": "target",
+                                                            "op": "none",
+                                                            "body": [
+                                                                6
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "number_iter",
+                                                            "op": "none",
+                                                            "body": [
+                                                                "3"
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "program",
+                                                    "op": "none",
+                                                    "body": [
+                                                        {
+                                                            "type": "action",
+                                                            "op": "func_call",
+                                                            "body": [
+                                                                {
+                                                                    "type": "target",
+                                                                    "op": "none",
+                                                                    "body": [
+                                                                        0
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "string_iter",
+                                                                    "op": "none",
+                                                                    "body": [
+                                                                        "\"i eq 3\""
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "action",
+                                                            "op": "continue",
+                                                            "body": [
+                                                                "continue"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "action",
+                                            "op": "if",
+                                            "body": [
+                                                {
+                                                    "type": "action",
+                                                    "op": "equal",
+                                                    "body": [
+                                                        {
+                                                            "type": "target",
+                                                            "op": "none",
+                                                            "body": [
+                                                                6
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "number_iter",
+                                                            "op": "none",
+                                                            "body": [
+                                                                "4"
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "program",
+                                                    "op": "none",
+                                                    "body": [
+                                                        {
+                                                            "type": "action",
+                                                            "op": "break",
+                                                            "body": [
+                                                                "break"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "action",
+                                            "op": "func_call",
+                                            "body": [
+                                                {
+                                                    "type": "target",
+                                                    "op": "none",
+                                                    "body": [
+                                                        0
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "target",
+                                                    "op": "none",
+                                                    "body": [
+                                                        6
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "target",
+                                                    "op": "none",
+                                                    "body": [
+                                                        5
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "action",
+                                            "op": "assign",
+                                            "body": [
+                                                {
+                                                    "type": "target",
+                                                    "op": "none",
+                                                    "body": [
+                                                        6
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "action",
+                                                    "op": "add",
+                                                    "body": [
+                                                        {
+                                                            "type": "target",
+                                                            "op": "none",
+                                                            "body": [
+                                                                6
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "number_iter",
+                                                            "op": "none",
+                                                            "body": [
+                                                                "1"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "action",
+                            "op": "return",
+                            "body": [
+                                {
+                                    "type": "number_iter",
+                                    "op": "none",
+                                    "body": [
+                                        "0"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "action",
+            "op": "assign",
+            "body": [
+                {
+                    "type": "target",
+                    "op": "none",
+                    "body": [
+                        7
+                    ]
+                },
+                {
+                    "type": "action",
+                    "op": "func_call",
+                    "body": [
+                        {
+                            "type": "target",
+                            "op": "none",
+                            "body": [
+                                3
+                            ]
+                        },
+                        {
+                            "type": "target",
+                            "op": "none",
+                            "body": [
+                                1
+                            ]
+                        },
+                        {
+                            "type": "target",
+                            "op": "none",
+                            "body": [
+                                2
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "action",
+            "op": "func_call",
+            "body": [
+                {
+                    "type": "target",
+                    "op": "none",
+                    "body": [
+                        0
+                    ]
+                },
+                {
+                    "type": "target",
+                    "op": "none",
+                    "body": [
+                        7
+                    ]
+                }
+            ]
+        }
+    ]
+}

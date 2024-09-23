@@ -1,0 +1,334 @@
+{
+    "code": [
+        {
+            "action": "load_name",
+            "value": "a"
+        },
+        {
+            "action": "load_const",
+            "value": 5
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "load_name",
+            "value": "b"
+        },
+        {
+            "action": "load_const",
+            "value": "\"hello\""
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "jmp",
+            "value": 54
+        },
+        {
+            "action": "load_name",
+            "value": "i"
+        },
+        {
+            "action": "load_const",
+            "value": 0
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "load_name",
+            "value": "i"
+        },
+        {
+            "action": "load_value",
+            "value": null
+        },
+        {
+            "action": "load_name",
+            "value": "t"
+        },
+        {
+            "action": "load_value",
+            "value": null
+        },
+        {
+            "action": "compare_below",
+            "value": null
+        },
+        {
+            "action": "jmp_true_remove",
+            "value": 3
+        },
+        {
+            "action": "jmp_remove",
+            "value": 42
+        },
+        {
+            "action": "jmp",
+            "value": 41
+        },
+        {
+            "action": "load_name",
+            "value": "i"
+        },
+        {
+            "action": "load_value",
+            "value": null
+        },
+        {
+            "action": "load_const",
+            "value": 3
+        },
+        {
+            "action": "compare_equal",
+            "value": null
+        },
+        {
+            "action": "jmp_true_remove",
+            "value": 2
+        },
+        {
+            "action": "jmp_false_remove",
+            "value": 9
+        },
+        {
+            "action": "create_scope",
+            "value": null
+        },
+        {
+            "action": "load_name",
+            "value": "arg0"
+        },
+        {
+            "action": "load_const",
+            "value": "\"i eq 3\""
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "call",
+            "value": "print"
+        },
+        {
+            "action": "delete_scope",
+            "value": null
+        },
+        {
+            "action": "seek",
+            "value": 1
+        },
+        {
+            "action": "jmp",
+            "value": -21
+        },
+        {
+            "action": "load_name",
+            "value": "i"
+        },
+        {
+            "action": "load_value",
+            "value": null
+        },
+        {
+            "action": "load_const",
+            "value": 4
+        },
+        {
+            "action": "compare_equal",
+            "value": null
+        },
+        {
+            "action": "jmp_true_remove",
+            "value": 2
+        },
+        {
+            "action": "jmp_false_remove",
+            "value": 2
+        },
+        {
+            "action": "jmp",
+            "value": -21
+        },
+        {
+            "action": "create_scope",
+            "value": null
+        },
+        {
+            "action": "load_name",
+            "value": "arg0"
+        },
+        {
+            "action": "load_name",
+            "value": "i"
+        },
+        {
+            "action": "load_value",
+            "value": null
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "load_name",
+            "value": "arg1"
+        },
+        {
+            "action": "load_name",
+            "value": "j"
+        },
+        {
+            "action": "load_value",
+            "value": null
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "call",
+            "value": "print"
+        },
+        {
+            "action": "delete_scope",
+            "value": null
+        },
+        {
+            "action": "seek",
+            "value": 1
+        },
+        {
+            "action": "load_name",
+            "value": "i"
+        },
+        {
+            "action": "load_name",
+            "value": "i"
+        },
+        {
+            "action": "load_value",
+            "value": null
+        },
+        {
+            "action": "load_const",
+            "value": 1
+        },
+        {
+            "action": "add",
+            "value": null
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "jmp",
+            "value": -47
+        },
+        {
+            "action": "load_const",
+            "value": 0
+        },
+        {
+            "action": "ret",
+            "value": null
+        },
+        {
+            "action": "load_name",
+            "value": "res"
+        },
+        {
+            "action": "create_scope",
+            "value": null
+        },
+        {
+            "action": "load_name",
+            "value": "t"
+        },
+        {
+            "action": "load_name",
+            "value": "a"
+        },
+        {
+            "action": "load_value",
+            "value": null
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "load_name",
+            "value": "j"
+        },
+        {
+            "action": "load_name",
+            "value": "b"
+        },
+        {
+            "action": "load_value",
+            "value": null
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "call",
+            "value": "f"
+        },
+        {
+            "action": "delete_scope",
+            "value": null
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "create_scope",
+            "value": null
+        },
+        {
+            "action": "load_name",
+            "value": "arg0"
+        },
+        {
+            "action": "load_name",
+            "value": "res"
+        },
+        {
+            "action": "load_value",
+            "value": null
+        },
+        {
+            "action": "assign",
+            "value": null
+        },
+        {
+            "action": "call",
+            "value": "print"
+        },
+        {
+            "action": "delete_scope",
+            "value": null
+        },
+        {
+            "action": "seek",
+            "value": 1
+        }
+    ],
+    "function_map": {
+        "f": 7
+    },
+    "call_stack": [],
+    "op_stack": [],
+    "scope_stack": []
+}

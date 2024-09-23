@@ -1,0 +1,50 @@
+[
+    {
+        "id": 0,
+        "type": "fn",
+        "name": "print",
+        "return_type": null
+    },
+    {
+        "id": 1,
+        "name": "a",
+        "type": "num",
+        "return_type": null
+    },
+    {
+        "id": 2,
+        "name": "b",
+        "type": "str",
+        "return_type": null
+    },
+    {
+        "id": 3,
+        "name": "f",
+        "type": "fn",
+        "return_type": "num"
+    },
+    {
+        "id": 4,
+        "name": "t",
+        "type": "num",
+        "return_type": null
+    },
+    {
+        "id": 5,
+        "name": "j",
+        "type": "str",
+        "return_type": null
+    },
+    {
+        "id": 6,
+        "name": "i",
+        "type": "num",
+        "return_type": null
+    },
+    {
+        "id": 7,
+        "name": "res",
+        "type": "num",
+        "return_type": null
+    }
+]

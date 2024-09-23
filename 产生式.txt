@@ -1,0 +1,33 @@
+number_optr = add | sub | mul | div
+
+number_expr = number number_expr'
+number_expr' = number_optr number number_expr' | 结束
+
+string_expr = string string_expr'
+string_expr' = add string string_expr' | 结束
+
+func_call = id open_bracket func_call'
+func_call' = id func_call'' | close_bracket semi
+func_call'' = comma id func_call'' | close_bracket semi
+
+expr = number_expr | string_expr | func_call
+
+
+value_assign = type id assign expr semi
+
+if = if_decl open_bracket expr close_bracket if_code_scope
+if_code_scope = open_brace part_code_scope' close_brace
+if_code_scope' = if | for | expr | value_assign
+
+for = for_decl open_bracket value_assign semi expr semi value_assign semi close_bracket for_code_scope
+for_code_scope = open_brace part_code_scope' close_brace
+for_code_scope' = if | for | expr | value_assign | break_decl | continue_decl
+
+func = type fn_decl id open_bracket func'
+func' = type id func'' | close_bracket semi func_code_scope 
+func'' = comma id func'' | close_bracket semi func_code_scope
+func_code_scope = open_brace func_code_scope' close_brace
+func_code_scope' = if | for | expr | value_assign | return_decl
+
+
+global_code_scope = if | for | value_assign | func | func_call | global_code_scope
